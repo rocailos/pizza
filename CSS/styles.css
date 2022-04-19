@@ -5,6 +5,7 @@
     padding: 0 0;
     font-family: 'Poppins', sans-serif;
 }
+/* MAIN */
 .offer{
     background-color: orangered;
     display: flex;
@@ -51,9 +52,9 @@
     height: 27%;
     width: 44%;
     border-radius: 20px;
-    margin-top: 25%;
     font-size: 6px;
     padding-left: 2%;
+    margin-top: 25%;
 }
 .img_pizza1{
     margin-top: -37%;
