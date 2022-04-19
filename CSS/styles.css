@@ -1,0 +1,89 @@
+/* Tipo de letra */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700;800&display=swap');
+html{
+    margin: 0 0;
+    padding: 0 0;
+    font-family: 'Poppins', sans-serif;
+}
+.offer{
+    background-color: orangered;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border-radius: 20px;
+
+}
+.pollo_asado{
+    padding-left: 15px;
+    max-width: 35%;
+}
+.offer_letters{
+    width: 65%;
+    text-align: right;
+    padding-right: 10px;
+}
+.offer_letter_white{
+    color: white;
+}
+.offer_text{
+    font-weight: 200;
+}
+.offer_percent{
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+/* Pizzes */
+.pizzas{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 433px;
+    width: 268px;
+    margin-left: 13.5%;
+}
+.pizza_1{
+    background-color: gray;
+    height: 110px;
+    width: 120px;
+    border-radius: 20px;
+    margin-top: 25%;
+    display: flex;
+    flex-direction: column;
+    font-size: 6px;
+}
+.pizza_2{
+    background-color: gray;
+    height: 110px;
+    width: 120px;
+    border-radius: 20px;
+    margin-top: 25%;
+    margin-left: 28px;
+    font-size: xx-small;
+}
+.pizza_3{
+    background-color: gray;
+    height: 110px;
+    width: 120px;
+    border-radius: 20px;
+    margin-top: 25%;
+    font-size: xx-small;
+}
+.pizza_4{
+    background-color: gray;
+    height: 110px;
+    width: 120px;
+    border-radius: 20px;
+    margin-top: 25%;
+    margin-left: 28px;
+    font-size: xx-small;
+}
+.pizza_price{
+    margin-top: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.button_pizza{
+    border-radius: 20px;
+}
