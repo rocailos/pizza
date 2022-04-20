@@ -130,3 +130,26 @@
 .pizza_name{
     margin-top: 35px;
 }
+/* FOOTER */
+.footer_button{
+    background-color: white;
+    opacity: 0.8;
+    width: 100%;
+    height: 9.5%;
+    position: fixed;
+    bottom: 0;
+}
+.shop_button{
+    background-color:#D6D9EB;
+    border: 4px solid white;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    margin-left: 39%;
+    box-shadow: 0 0 50px rgba(0,0,0,0.8); /*CONFIGURACIÓN PARA SHADOW DEL BUTTON*/
+}
+.shopping_cart{
+    margin-top: 10px;
+    height: 80%;
+    width: 80%;
+}
