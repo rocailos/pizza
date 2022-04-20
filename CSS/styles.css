@@ -87,3 +87,24 @@ html{
 .button_pizza{
     border-radius: 20px;
 }
+/*header*/
+.logo{
+    display: flex;
+    flex-direction: row;
+}
+
+ .logo1{
+     background: orangered;
+     width: 160px;
+     border-radius: 10px 10px 10px 0px;
+ }
+
+ .logo p{
+
+    color:white;
+    text-align: center;
+ }
+
+ .logo2{
+     margin:10px;
+}
