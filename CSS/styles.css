@@ -5,6 +5,47 @@
     padding: 0 0;
     font-family: 'Poppins', sans-serif;
 }
+/*header*/
+.logo{
+    display: flex;
+    flex-direction: row;
+}
+
+ .logo1{
+     background: orangered;
+     width: 160px;
+     border-radius: 10px 10px 10px 0px;
+     margin-top:10px;padding: 10px;
+     margin-left: 30px;
+
+ }
+ .cohet{
+     font-size:19px;
+     margin-top:21px;
+
+ }
+
+
+ .logo p{
+
+    color:white;
+    text-align: center;
+
+
+ }
+
+ .logo2{
+    margin:10px;
+    height: 23px;
+    width: 22px;
+    font-weight: bolder;
+}
+.text{
+    margin-top:25px;
+    margin-left:30px;
+}
+
+
 /* MAIN */
 .offer{
     background-color: orangered;
@@ -12,7 +53,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     border-radius: 20px;
-    margin-top: 15%;
+    margin-top: 12%;
     margin-left: 8%;
     margin-right: 8%;
 }
@@ -125,30 +166,7 @@
     border-radius: 20px;
 
 }
-/*header*/
-.logo{
-    display: flex;
-    flex-direction: row;
-}
 
- .logo1{
-     background: orangered;
-     width: 160px;
-     border-radius: 10px 10px 10px 0px;
- }
-
- .logo p{
-
-    color:white;
-    text-align: center;
- }
-
- .logo2{
-     margin:10px;
-    height: 23px;
-    width: 22px;
-    font-weight: bolder;
-}
 .pizza_name{
     margin-top: 35px;
 }
