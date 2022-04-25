@@ -61,7 +61,7 @@ function print_card(name, ingredient, path, price){
                         </div>
                         <div class="card_item_row">
                             <p class="price_text">${price}</p>
-                            <button onclick="pizza_prompt(${price})" class="pizza_button">+</button>
+                            <button onclick="" class="pizza_button">+</button>
                         </div>
                     </div>
                 </div>`
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 })
 
-function pizza_prompt(pizzaPrice){
+function ask_pizza(pizzaPrice){
     console.log("hola")
     var pizza_cantidad = prompt('¿Cuantas unidades quieres de la pizza?', 'RECORDAD QUE SOLO SE ACEPTAN VALORES NUMERICOS');
     var precio_pizza = (pizzaPrice)*pizza_cantidad
@@ -93,3 +93,5 @@ function pizza_prompt(pizzaPrice){
     }
 
 }
+
+document.getElementByClass("pizza_button").addEventListener('click', ask_pizza(pizzaPrice));
