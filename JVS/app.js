@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 function prompt_pizza(){
-    let pizzArray = []
+    let pizzArray = [0, 0, 0, 0, 0, 0, 0, 0]
     let pizzaPrice
     let pizzaName
     mockData.forEach(pizzaObj =>{
@@ -96,7 +96,6 @@ function prompt_pizza(){
             pizzArray.splice(7, 0, pizza_cantidad)
             console.log(pizzArray[7])
         }
-        console.log(pizzArray)
     }if(number == true){
         window.alert("El valor indicado no es numérico");
     }
