@@ -47,7 +47,7 @@ const mockData = [
         'path': '/pizza/IMAGES/pizza4.png'
     }
 ]
-
+// CUANDO SE CARGUÉ EL DOM IMPRIMIRÁ EN PANTALLA LAS DIFERENTES CARTAS
 document.addEventListener('DOMContentLoaded', () => {
     mockData.forEach(pizzaObj => {
         let pizzaName = pizzaObj['name'];
@@ -57,51 +57,62 @@ document.addEventListener('DOMContentLoaded', () => {
         print_card(pizzaName, pizzaIngredient, pizzaPath, pizzaPrice)
     })
 })
-
-function prompt_pizza(){
-    let pizzArray = [0, 0, 0, 0, 0, 0, 0, 0]
-    let pizzaPrice
+// FUNCION QUE PERMITE DECIR AL CLIENTE CUANTAS UNIDADES QUIERE DEL PRODUCTO
+function unidades_pizza(){
     let pizzaName
+    let pizzaPrice
+
     mockData.forEach(pizzaObj =>{
-    pizzaPrice = pizzaObj['price']
-    pizzaName = pizzaObj['name']
+        pizzaName = pizzaObj['name']
+        pizzaPrice = pizzaObj['price']
     })
-    var pizza_cantidad = prompt('¿Cuantas unidades quieres de la pizza?', 'RECORDAD QUE SOLO SE ACEPTAN VALORES NUMERICOS');
-    var pizza = pizza + pizza_cantidad
-    var number = new Boolean(isNaN(pizza_cantidad))
-    if(number == false){
-        window.alert(`Se han añadido ${pizza_cantidad} pizzas al carrito de la compra / El total de las ${pizza_cantidad} es: ${pizzaPrice}€`);
-        if(pizzaName === 'California pizza'){
-            pizzArray.splice(0, 0, pizza_cantidad)
-            console.log(pizzArray[0])
-        }if(pizzaName === 'Greek pizza'){
-            pizzArray.splice(1, 0, pizza_cantidad)
-            console.log(pizzArray[1])
-        }if(pizzaName === 'Sicilian pizza'){
-            pizzArray.splice(2, 0, pizza_cantidad)
-            console.log(pizzArray[2])
-        }if(pizzaName === 'Louis pizza'){
-            pizzArray.splice(3, 0, pizza_cantidad)
-            console.log(pizzArray[3])
-        }if(pizzaName === 'Calfornia pizza'){
-            pizzArray.splice(4, 0, pizza_cantidad)
-            console.log(pizzArray[4])
-        }if(pizzaName === 'Grek pizza'){
-            pizzArray.splice(5, 0, pizza_cantidad)
-            console.log(pizzArray[5])
-        }if(pizzaName === 'Siclian pizza'){
-            pizzArray.splice(6, 0, pizza_cantidad)
-            console.log(pizzArray[6])
-        }if(pizzaName === 'Lois pizza'){
-            pizzArray.splice(7, 0, pizza_cantidad)
-            console.log(pizzArray[7])
-        }
-    }if(number == true){
-        window.alert("El valor indicado no es numérico");
+
+    let cantidad_pizza = prompt(`¿Cuantas unidades quieres de la ${pizzaName}?`, 'RECUERDA QUE SOLO SE ACEPTAN VALORES NUMÉRICOS')
+    let totalPrice = pizzaPrice * cantidad_pizza
+
+    if(typeof cantidad_pizza === 'number'){
+        window.alert(`Se han añadido ${cantidad_pizza} pizzas a la cesta de la compra / El total de las ${cantidad_pizza} es: ${totalPrice}`)
+    }else{
+        window.alert('El valor indicado no es numérico ')
     }
 
+    return cantidad_pizza, pizzaName;
 }
-// FUNCION QUE CREA LAS CARTAS DE LAS PIZZAS
+
+// FUNCION QUE PERMITE GUARDAR LA CANTIDAD DE PRODUCTO DENTRO DE UN ARRAY
+function savepizzaarray(cantidad_pizza, pizzaName){
+    let pizza_array = [0, 0, 0, 0, 0, 0, 0, 0]
+
+    if(pizzaName === 'California pizza'){
+        pizza_array.splice(0, 0, pizza_cantidad)
+    }if(pizzaName === 'Greek pizza'){
+        pizza_array.splice(1, 0, pizza_cantidad)
+    }if(pizzaName === 'Sicilian pizza'){
+        pizza_array.splice(2, 0, pizza_cantidad)
+    }if(pizzaName === 'Louis pizza'){
+        pizza_array.splice(3, 0, pizza_cantidad)
+    }if(pizzaName === 'Calfornia pizza'){
+        pizza_array.splice(4, 0, pizza_cantidad)
+    }if(pizzaName === 'Grek pizza'){
+        pizza_array.splice(5, 0, pizza_cantidad)
+    }if(pizzaName === 'Siclian pizza'){
+        pizza_array.splice(6, 0, pizza_cantidad)
+    }if(pizzaName === 'Lois pizza'){
+        pizza_array.splice(7, 0, pizza_cantidad)
+    }
+    return pizza_array   
+}
+
+// FUNCION QUE PERMITE SUMAR TODAS LAS POSICIONES DEL PIZZA_ARRAY 
+function array_sum(pizza_array){
+    let sum = 0
+
+    for (let i = 0; i < pizza_array.length; i++){
+        sum += pizza_array[i];
+    }
+}
+
+// FUNCION QUE PERMITE CREAR LAS CARTAS DE LAS PIZZAS
 function print_card(name, ingredient, path, price){
     const cardContainer = document.getElementById('container_card');
     let card = `<div class="card_box">
@@ -115,7 +126,7 @@ function print_card(name, ingredient, path, price){
                         </div>
                         <div class="card_item_row">
                             <p class="price_text">${price}</p>
-                            <button class="pizza_button" onclick="prompt_pizza()">+</button>
+                            <button class="pizza_button" onclick="unidades_pizza()">+</button>
                         </div>
                     </div>
                 </div>`
@@ -123,14 +134,3 @@ function print_card(name, ingredient, path, price){
                         
 
 }
-
-
-// FUNCION PARA PEDIR CUANTAS UNIDADES DE PRODUCTO QUIERE EL CLIENTE
-
-// EVENTO ONCLICK PARA VINCULAR LA FUNCION DEL PROMPT AL BOTÓN
-// const btnPizza = document.getElementById('btnAumentar')
-// btnPizza.addEventListener('click',function ()
-//     {
-//      alert("hello");
-//      //validation code to see State field is mandatory.  
-//     }  );
