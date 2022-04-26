@@ -70,12 +70,15 @@ function unidades_pizza(){
     let cantidad_pizza = prompt(`¿Cuantas unidades quieres de la ${pizzaName}?`, 'RECUERDA QUE SOLO SE ACEPTAN VALORES NUMÉRICOS')
     let totalPrice = pizzaPrice * cantidad_pizza
 
-    if(typeof cantidad_pizza === 'number'){
-        window.alert(`Se han añadido ${cantidad_pizza} pizzas a la cesta de la compra / El total de las ${cantidad_pizza} es: ${totalPrice}`)
-    }else{
-        window.alert('El valor indicado no es numérico ')
-    }
+    // if(typeof cantidad_pizza == "number"){
+    //     window.alert(`Se han añadido ${cantidad_pizza} pizzas a la cesta de la compra / El total de las ${cantidad_pizza} es: ${totalPrice}`)
+    // }else{
+    //     window.alert('El valor indicado no es numérico ')
+    // }
+    var number = new Boolean(isNaN(cantidad_pizza))
 
+    if (number == true) window.alert('El valor indicado no es numérico')
+    else window.alert(`Se han añadido ${cantidad_pizza} pizzas a la cesta de la compra / El total de las ${cantidad_pizza} es: ${totalPrice}`)
     return cantidad_pizza, pizzaName;
 }
 
@@ -84,21 +87,21 @@ function savepizzaarray(cantidad_pizza, pizzaName){
     let pizza_array = [0, 0, 0, 0, 0, 0, 0, 0]
 
     if(pizzaName === 'California pizza'){
-        pizza_array.splice(0, 0, pizza_cantidad)
+        pizza_array.splice(0, 0, cantidad_pizza)
     }if(pizzaName === 'Greek pizza'){
-        pizza_array.splice(1, 0, pizza_cantidad)
+        pizza_array.splice(1, 0, cantidad_pizza)
     }if(pizzaName === 'Sicilian pizza'){
-        pizza_array.splice(2, 0, pizza_cantidad)
+        pizza_array.splice(2, 0, cantidad_pizza)
     }if(pizzaName === 'Louis pizza'){
-        pizza_array.splice(3, 0, pizza_cantidad)
+        pizza_array.splice(3, 0, cantidad_pizza)
     }if(pizzaName === 'Calfornia pizza'){
-        pizza_array.splice(4, 0, pizza_cantidad)
+        pizza_array.splice(4, 0, cantidad_pizza)
     }if(pizzaName === 'Grek pizza'){
-        pizza_array.splice(5, 0, pizza_cantidad)
+        pizza_array.splice(5, 0, cantidad_pizza)
     }if(pizzaName === 'Siclian pizza'){
-        pizza_array.splice(6, 0, pizza_cantidad)
+        pizza_array.splice(6, 0, cantidad_pizza)
     }if(pizzaName === 'Lois pizza'){
-        pizza_array.splice(7, 0, pizza_cantidad)
+        pizza_array.splice(7, 0, cantidad_pizza)
     }
     return pizza_array   
 }
@@ -110,6 +113,7 @@ function array_sum(pizza_array){
     for (let i = 0; i < pizza_array.length; i++){
         sum += pizza_array[i];
     }
+    return sum
 }
 
 // FUNCION QUE PERMITE CREAR LAS CARTAS DE LAS PIZZAS
@@ -126,11 +130,34 @@ function print_card(name, ingredient, path, price){
                         </div>
                         <div class="card_item_row">
                             <p class="price_text">${price}</p>
-                            <button class="pizza_button" onclick="unidades_pizza()">+</button>
+                            <button id="shopping_btn" class="pizza_button" onclick="unidades_pizza()">+</button>
                         </div>
                     </div>
                 </div>`
     cardContainer.insertAdjacentHTML('beforeend', card);
                         
 
+}
+
+// FUNCION PARA HABLITAR O DESHABILITAR EL BOTON DE LA CESTA
+
+function disable_able_button(pizza_array){
+    let button = document.getElementById('shopping_btn')
+    
+// Si pizza_array tiene algún valor el botón se habilita
+    if(pizza_array.length>0) button.disabled = false;
+    else button.disabled = false;
+
+    return button
+}
+
+disable_able_button()
+// FUNCION QUE SI EL BOTON ESTÁ HABILITADO SALGA EL CONTADOR
+
+function counter(button, sum){
+    if(button.disabled = false){
+
+    }else{
+
+    }
 }
